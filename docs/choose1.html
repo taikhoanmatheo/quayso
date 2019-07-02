@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <!-- Bootstrap -->
+    <title>QUAY SỐ TRÚNG THƯỞNG 20 GIẢI</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="css/jquery.flipcounter.css" rel="stylesheet" media="screen">
+    <link href="css/mld.css" rel="stylesheet" media="all">
+    <link href="css/print.css" rel="stylesheet" type="text/css" media="print">
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jstween-1.1.min.js"></script>
+    <script src="js/jquery.flipcounter.js"></script>
+    <script src="js/mld.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div ng-controller="mldCtrl">
+        <div id="mainBackground" class="bg_tv"></div>
+       <div class="ctnButtonHome_choose">
+            <button type="button" id="btngiaikhuyenkhich" class="btn_giaikhuyenkhich" ng-click="redirectGiaikhuyenkhich20()"/>
+			<button type="button" id="btngiaidacbiet" class="btn_giaidacbiet" ng-click="redirectGiaidacbiet20()"/>
+		</div>
+		<div class="ctnControlButtonRun">
+            <button type="button" id="btnHome" class="btn_back" ng-click="redirectHome()"/>
+            
+        </div>
+</div>
+</body>
+</html>

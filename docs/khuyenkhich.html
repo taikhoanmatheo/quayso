@@ -1,0 +1,226 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <!-- Bootstrap -->
+    <title>QUAY SỐ TRÚNG THƯỞNG 03 GIẢI KHUYẾN KHÍCH</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="css/jquery.flipcounter.css" rel="stylesheet" media="screen">
+    <link href="css/mld.css" rel="stylesheet" media="all">
+    <link href="css/print.css" rel="stylesheet" type="text/css" media="print">
+    <script src="js/angular.min.js"></script>
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jstween-1.1.min.js"></script>
+    <script src="js/jquery.flipcounter.js"></script>
+    <script src="js/mld.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<div ng-controller="mldCtrl">
+    <div id="pageIndex" style="display: none;">2</div>
+    <div class="hidden-print">
+        <div id="mainBackground" class="bg_giaikhuyenkhich"></div>
+        
+		
+		
+		<div id="resultBackground" class="bg_tv_stop" style="display: none;"></div>
+        
+		<div class="ctnControlButtonList">
+			<button type="button" id="btnList" class="btn_list" data-toggle="modal" data-target="#customerModal"/>
+		</div>
+		<div class="ctnControlButtonResult">
+			
+            <button type="button" id="btnResult" class="btn_result" data-toggle="modal" data-target="#resultModal"/>
+		</div>
+		
+		<!-- drawing animation -->
+		
+        <div class="ctnCounter">
+            <div id="flipcounter" align="center">0000</div>
+            <script type="text/javascript">
+                // Make the flip counter
+				//localStorage.clear();
+                $("#flipcounter").flipCounterInit({
+                    'speed': 0.05,
+                    'onFlip': function () {
+                    }
+                });
+            </script>
+
+        </div>
+		
+		<div class="ctnControlButtonRun">
+            <button type="button" id="btnHome" class="btn_back" ng-click="redirectHome()"/>
+            
+        </div>
+        <div class="ctnControlButton">
+            <button id="btnStart" class="btn_start" ng-click="flipRun()"/>
+            <button id="btnSelect" ng-show="flip_running" class="btn_stop" ng-click="flipStop()"/>
+			<button id="btnContinue" class="btn_continue" ng-click="flipContinue()"/>
+			<button id="btnRedraw" class="btn_redraw" ng-click="flipRedrawKhuyenkhich()"/>
+			
+        </div>
+        
+        <!-- customer list modal -->
+        <!-- Modal -->
+        <div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="customerModalLabel"
+             aria-hidden="true">
+            <div class="modal-dialog" style="width: 800px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Danh sách khách hàng</h4>
+                        <input ng-model="txtSearchCustomer" type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <div class="modal-body">
+                        <div class="ctn_table_customers">
+                            <table class="table-bordered" style="width: 100%">
+                                <tr>
+                                    <th style="text-align:center;">STT</th>
+                                    <th style="text-align:center;">TÊN KHÁCH HÀNG</th>
+                                    <th style="text-align:center;">MÃ SỐ</th>
+                                    <th style="text-align:center;">ĐIỆN THOẠI</th>
+									<th style="text-align:center;">NGÀY SINH</th>
+                                    <th style="text-align:center;">DANH XƯNG</th>
+                                </tr>
+                                <tr ng-repeat="person in filtered =(peopleDraw | filter:txtSearchCustomer) | limitTo:totalDisplayed track by person.STT">
+                                    <td style="text-align:center;">{{person.STT}}</td>
+                                    <td>{{person.MODEL}}</td>
+                                    <td>{{person.IMEI}}</td>
+                                    <td>{{person.BILL_ID}}</td>
+									<td>{{person.DATE_BUY}}</td>
+                                    <td style="text-align:center;">{{person.DOT}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <ul class="pager">
+                            <span>{{(filtered.length > totalDisplayed)?(totalDisplayed +" / "+ filtered.length):(filtered.length +" / "+ filtered.length)}}</span>
+                            &nbsp;&nbsp;
+                            <li><a href="#" ng-click="loadMore(-1)">Bớt -{{displayedStep}}</a></li>
+                            <li><a href="#" ng-click="loadMore(1)">Thêm +{{displayedStep}}</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+
+        <!-- result modal -->
+        <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultModal"
+             aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog" style="width: 800px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Kết quả đợt quay</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <!-- Tab panes -->
+                            <div class="tab-content ctn_table_customers">
+                                <div class="tab-pane face in active" id="award{currentPrice.id}}">
+                                    <table class="table-bordered" style="width: 100%">
+                                        <tr>
+                                            <th style="text-align:center;">STT</th>
+                                            <th style="text-align:center;">TÊN KHÁCH HÀNG</th>
+                                            <th style="text-align:center;">MÃ SỐ</th>
+                                            <th style="text-align:center;">ĐIỆN THOẠI</th>
+											<th style="text-align:center;">NGÀY SINH</th>
+                                            <th style="text-align:center;">DANH XƯNG</th>
+                                        </tr>
+                                        <tr ng-repeat="person in currentPrice.results track by $index">
+											<td style="text-align:center;">{{person.dNo}}</td>
+											<td>{{person.MODEL}}</td>
+											<td>{{person.IMEI}}</td>
+											<td>{{person.BILL_ID}}</td>
+											<td>{{person.DATE_BUY}}</td>
+											<td style="text-align:center;">{{person.DOT}}</td>
+										</tr>
+                                        <tr>
+                                            <td colspan="6"><strong>TỔNG SỐ GIẢI:
+                                                {{currentPrice.results.length}} </strong></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"
+                                ng-click="printResult()"><span class="glyphicon glyphicon-print"></span>&nbsp;IN KẾT
+                            QUẢ
+                        </button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- end result modal -->
+
+    </div> <!--hidden print-->
+
+    <!-- print -->
+    <div class="visible-print-block">
+        <p class="print_title">
+            <strong>KẾT QUẢ BUỔI QUAY SỐ TRÚNG THƯỞNG CHƯƠNG TRÌNH</strong><br/>
+            <strong>{{programName}}</strong><br/>
+            <strong> NGÀY {{date}}</strong><br/>
+
+            <span>___________________</span><br/><br/>
+            <strong>{{currentPrice.title}}&nbsp;-&nbsp;</strong>
+            <strong><b>{{currentPrice.total}}</b>&nbsp;GIẢI</strong><br/>
+        </p>
+
+        <p>&nbsp;</p>
+
+        <div>
+            <div class="alert alert-info" ng-hide="currentPrice.results.length" style="text-align: center">Chưa có kết quả
+            </div>
+            <table class="table-bordered" style="width: 100%" ng-show="currentPrice.results.length">
+                <tr>
+                    <th style="text-align:center;">STT</th>
+                    <th style="text-align:center;">TÊN KHÁCH HÀNG</th>
+                    <th style="text-align:center;">MÃ SỐ</th>
+                    <th style="text-align:center;">ĐIỆN THOẠI</th>
+					<th style="text-align:center;">NGÀY SINH</th>
+                    <th style="text-align:center;">DANH XƯNG</th>
+                </tr>
+                <tr ng-repeat="person in currentPrice.results track by $index">
+                    <td style="text-align:center;">{{person.dNo}}</td>
+                    <td>{{person.MODEL}}</td>
+                    <td>{{person.IMEI}}</td>
+                    <td>{{person.BILL_ID}}</td>
+					<td>{{person.DATE_BUY}}</td>
+                    <td style="text-align:center;">{{person.DOT}}</td>
+                </tr>
+                <tr>
+                    <td colspan="6"><strong>TỔNG SỐ GIẢI: {{currentPrice.results.length}} </strong></td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <table style="width: 100%" ng-show="currentPrice.results.length">
+                <tr>
+                    <td colspan="1" style="text-align:center;height: 200px;">Đại diện Công ty
+                    </td>
+                    <td colspan="1" style="text-align:center;height: 200px;">Đại diện Ban tổ chức</td>
+                </tr>
+                <tr>
+                    <td colspan="1" style="text-align:center;height: 200px;">Đại diện Công đoàn</td>
+                    <td colspan="1" style="text-align:center;height: 200px;">Đại diện khách hàng</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

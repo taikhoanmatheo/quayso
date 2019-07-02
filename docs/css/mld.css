@@ -1,0 +1,425 @@
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600&subset=latin,vietnamese);*/
+@media print {
+  @page { margin: 0; 
+	
+  }
+
+  body { margin: 1.6cm; }
+  @page: second {margin: 0; }
+  
+
+}
+
+
+
+body {
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+th {
+    text-align: left;
+}
+
+.ctnCounter {
+    position: absolute;
+    top: 510px;
+	margin-left: 270px;
+    height: 97px;
+    width: 813px;
+}
+
+.ctnControlButton {
+    position: absolute;
+    top: 645px;
+	left: 500px;
+    height: 53px;
+    width: 366px;
+    text-align: center;
+}
+
+.ctnControlButtonHome {
+    height: 340px;
+    width: 1366px;
+    position: relative;
+}
+
+.ctnControlButtonRun {
+    position: absolute;
+    top: 585px;
+	left:-550px;
+    height: 147px;
+    width: 1366px;
+    text-align: center;
+}
+
+.ctnButtonHome_choose {
+    position: absolute;
+    top: 360px;
+    height: 180px;
+    width: 1366px;
+    text-align: center;
+}
+.btn_home_direct {
+    width: 100%;
+    height: 100%;
+	background: url("../images/bg_home.png") no-repeat;
+    border: none;
+}
+
+.btn_tv {
+    width: 165px;
+    height: 185px;
+    background: url("../images/btn_home_tv.png") no-repeat;
+    border: none;
+    margin-left: 269px;
+}
+
+.btn_tulanh {
+    width: 162px;
+    height: 188px;
+    background: url("../images/btn_home_tulanh.png") no-repeat;
+    border: none;
+    margin-left: 152px;
+}
+
+.btn_1ty {
+    width: 245px;
+    height: 202px;
+    background: url("../images/btn_home_1ty.png") no-repeat;
+    border: none;
+    margin-left: 133px;
+}
+
+.btn_start {
+    width: 338px;
+    height: 129px;
+    background: url("../images/btn_start.png") no-repeat;
+    border: none;
+	margin-left: 50px;
+}
+
+.btn_stop {
+    width: 338px;
+    height: 129px;
+    background: url("../images/btn_stop.png") no-repeat;
+    border: none;
+	margin-left: 50px;
+}
+.btn_continue {
+    width: 338px;
+    height: 129px;
+    background: url("../images/btn_continue.png") no-repeat;
+    border: none;
+	margin-left: 50px;
+}
+.btn_redraw {
+    width: 338px;
+    height: 129px;
+    background: url("../images/btn_redraw.png") no-repeat;
+    border: none;
+}
+.btn_back {
+    width: 180px;
+    height: 180px;
+    background: url("../images/btn_back.png") no-repeat;
+    border: none;
+}
+.btn_20giai {
+    width: 307px;
+    height: 94px;
+    background: url("../images/btn_20giai.png") no-repeat;
+    border: none;
+	margin-left: 50px;
+	margin-top: -25px;
+}
+.btn_dacbiet {
+    width: 280px;
+    height: 180px;
+    background: url("../images/tv_btn.png") no-repeat;
+    border: none;
+	margin-left: 730px;
+	margin-top: 50px;
+}
+.btn_giainhat {
+    width: 200px;
+    height: 180px;
+    background: url("../images/vinmec_btn.png") no-repeat;
+    border: none;
+	margin-left: 30px;
+	margin-top: 50px;
+}
+.btn_khuyenkhich {
+    width: 300px;
+    height: 94px;
+    background: url("../images/btn_khuyenkhich.png") no-repeat;
+    border: none;
+	margin-left: 2px;
+	margin-top: 50px;
+}
+.btn_giaikhuyenkhich {
+    width: 300px;
+    height: 94px;
+    background: url("../images/btn_giaikhuyenkhich.png") no-repeat;
+    border: none;
+	margin-left: 50px;
+	margin-top: 0px;
+}
+.btn_giaidacbiet {
+    width: 307px;
+    height: 94px;
+    background: url("../images/btn_giaidacbiet.png") no-repeat;
+    border: none;
+	margin-left: 50px;
+	margin-top: 0px;
+}
+.btn_50giai {
+    width: 307px;
+    height: 94px;
+    background: url("../images/btn_50giai.png") no-repeat;
+    border: none;
+	margin-left: 50px;
+	margin-top: -25px;
+}
+.btn_list {
+    width: 150px;
+    height: 150px;
+    background: url("../images/btn_list.png") no-repeat;
+    border: none;
+    margin-left: 880px;
+	margin-top: -27px;
+}
+.btn_result {
+    width: 150px;
+    height: 150px;
+    background: url("../images/btn_result.png") no-repeat;
+    border: none;
+    margin-left: 98px;
+	margin-top: -27px;
+}
+
+.ctnControlButtonList {
+	position: absolute;
+    top: 615px;
+	left:100px;
+	width: 180px;
+    height: 180px;
+	z-index:1;
+}
+.ctnControlButtonResult {
+	position: absolute;
+    top: 615px;
+	left:1050px;
+	width: 180px;
+    height: 180px;
+}
+
+body .modal_customer {
+    /* new custom width */
+    width: 750px;
+    /* must be half of the width, minus scrollbar on the left (30px) */
+    margin-left: -375px;
+}
+
+.bg_home {
+    background: url("../images/homepage.jpg") no-repeat;
+    background-size: cover;
+    height: 768px;
+    width: 1366px;
+}
+
+.bg_tv {
+    background: url("../images/bg_tv.png") no-repeat;
+    background-size: cover;
+    height: 768px;
+    width: 1366px;
+}
+.bg_giaikhuyenkhich {
+    background: url("../images/bg_giaikhuyenkhich.png") no-repeat;
+    background-size: cover;
+    height: 768px;
+    width: 1366px;
+}
+.bg_giaidacbiet {
+    background: url("../images/bg_dacbiet.jpg") no-repeat;
+    background-size: cover;
+    height: 768px;
+    width: 1366px;
+}
+.bg_giainhat {
+    background: url("../images/bg_giainhat.png") no-repeat;
+    background-size: cover;
+    height: 768px;
+    width: 1366px;
+}
+.bg_50dacbiet {
+    background: url("../images/50dacbiet.png") no-repeat;
+    background-size: cover;
+    height: 768px;
+    width: 1366px;
+}
+.bg_text_tv {
+    position: absolute;
+    top: 0px;
+    background: url("../images/text_tv.png") no-repeat;
+    background-size: cover;
+    height: 768px;
+    width: 1366px;
+}
+
+.bg_tv_stop {
+    position: absolute;
+    top: 0px;
+    background: url("../images/bg_tv_stop.png") no-repeat;
+    background-size: cover;
+    height: 768px;
+    width: 1366px;
+}
+
+.bg_tulanh {
+    background: url("../images/bg_tulanh.png") no-repeat;
+    background-size: cover;
+    height: 768px;
+    width: 1366px;
+}
+.bg_text_tulanh {
+    position: absolute;
+    top: 0px;
+    background: url("../images/text_tulanh.png") no-repeat;
+    background-size: cover;
+    height: 768px;
+    width: 1366px;
+}
+.bg_tulanh_stop {
+    position: absolute;
+    top: 0px;
+    background: url("../images/bg_tulanh_stop.png") no-repeat;
+    background-size: cover;
+    height: 768px;
+    width: 1366px;
+}
+
+.bg_1ty {
+    background: url("../images/bg_1ty.png") no-repeat;
+    background-size: cover;
+    height: 768px;
+    width: 1366px;
+}
+.bg_text_1ty {
+    position: absolute;
+    top: 0px;
+    background: url("../images/text_1ty.png") no-repeat;
+    background-size: cover;
+    height: 768px;
+    width: 1366px;
+}
+.bg_1ty_stop {
+    position: absolute;
+    top: 0px;
+    background: url("../images/bg_1ty_stop.png") no-repeat;
+    background-size: cover;
+    height: 768px;
+    width: 1366px;
+}
+
+.bg_blur {
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.ctn_table_customers {
+    max-height: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ctn_priceInfo {
+    margin: auto;
+    text-align: center;
+}
+
+.ctn_priceInfoBound {
+    margin-top: 160px;
+    height: 140px;
+}
+
+.ctn_space_vertical {
+    height: 150px;
+}
+
+.ctn_space_horizontal {
+    width: 150px;
+    height: 150px;
+}
+
+.drawingModal {
+    position: absolute;
+    right: 0px;
+    botton: 0px;
+    max-width: 350px;
+    opacity: 0.7;
+}
+
+.ctn_table_result {
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.ctn_priceInfo span {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: -2px;
+    color: #0D4488;
+    /*text-shadow: rgba(0,0,0,0.5) -1px 0, rgba(0,0,0,0.3) 0 -1px, rgba(255,255,255,0.5) 0 1px, rgba(0,0,0,0.3) -1px -1px;
+    */
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+}
+
+.ctn_priceInfo span b {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.ctn_priceInfo span strong {
+    font-weight: 800;
+    font-size: 22px;
+}
+
+.ctn_priceInfo span strong.big {
+    font-weight: 800;
+    font-size: 35px;
+}
+
+#ctn_resultList {
+
+    position: absolute;
+    right: 0px;
+    top: 200px;
+    max-height: 350px;
+    opacity: 0.7;
+    box-shadow: -5px 5px 5px #aaaaaa;
+}
+
+.ctn_resultList_table {
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.rli_custom-enter,
+.rli_custom-leave,
+.rli_custom-move {
+    -webkit-transition: 1s linear all;
+    -moz-transition: 1s linear all;
+    -o-transition: 1s linear all;
+    transition: 1s linear all;
+    position: relative;
+}
+
+

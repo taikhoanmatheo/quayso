@@ -1,0 +1,8 @@
+.hidden-print, .hidden-print * {
+    visibility:hidden;
+    display: none;
+}
+
+.print_title {
+    text-align: center;
+}

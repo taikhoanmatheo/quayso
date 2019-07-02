@@ -1,0 +1,90 @@
+
+ul.flipcounter {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.flipcounter li {
+    display: inline-block;
+    margin-left: 0px;
+}
+
+ul.flipcounter li .numberwrap {
+    position: relative;
+    width: 45px;
+    height: 80px;
+}
+
+ul.flipcounter .flipper_top {
+    position: absolute;
+    width: 45px;
+    height: 64px;
+    background: url(../images/grain.png), #19191c;
+    border-radius: 5px 5px 5px 5px;
+    text-align: center;
+	top: 8px;
+    overflow: hidden;
+}
+
+ul.flipcounter .flipper_bottom {
+    position: absolute;
+    width: 45px;
+    height: 32px;
+    background: url(../images/grain.png), #242529;
+    border-radius: 0px 0px 5px 5px;
+    top: 45px;
+    left: 0px;
+    text-align: center;
+    overflow: hidden;
+}
+
+ul.flipcounter .rings {
+    position: absolute;
+    top: 40px;
+    left: -2px;
+    background: url(../images/rings.png) no-repeat;
+    width: 45px;
+    height: 18px;
+}
+
+.flipper_top_front { -webkit-transform-origin: 50% 100%; }
+.flipper_bottom_front { -webkit-transform-origin: 50% 0%; }
+
+ul.flipcounter .flipper_top1 { top: 10px; }
+ul.flipcounter .flipper_top2 { top: 12px; }
+
+ul.flipcounter .flipper_bottom1 { top: 50px; box-shadow: 0px 1px 3px 1px rgba(50, 50, 50, 0.6); }
+ul.flipcounter .flipper_bottom2 { top: 33px; box-shadow: 0px 1px 3px 1px rgba(50, 50, 50, 0.2); }
+ul.flipcounter .flipper_bottom3 { top: 34px; box-shadow: 0px 1px 3px 1px rgba(50, 50, 50, 0.2); }
+ul.flipcounter .flipper_bottom4 { top: 35px; box-shadow: 0px 2px 5px 1px rgba(50, 50, 50, 0.4); }
+
+
+ul.flipcounter span, 
+ul.flipcounter li.comma {
+    font-family: 'Share Tech', sans-serif;
+    font-size: 60px;
+    line-height: 60px;
+    color: #000000;
+    text-shadow: 0px 0px 25px rgba(255, 255, 255, 0.1);
+}
+
+
+ul.flipcounter span { display: block; }
+ul.flipcounter div.flipper_bottom span { margin-top: -27px; }
+
+ul.flipcounter li.comma { 
+    text-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
+    color: #e4e4e4;
+    margin-left: 0px;
+}
+
+ul.flipcounter .flipper_top .rings { background-position: 0px 0px; }
+ul.flipcounter .flipper_bottom .rings { background-position: 0px 0px; }
+
+span.num{
+	margin-top: 10px;
+    font-family: "Samsung InterFace";
+	font-weight: bold;
+	font-size: 50px !important;
+}
